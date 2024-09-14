@@ -21,6 +21,7 @@ public class ArrayQueue {
          * (0+1) % 5
         * */
 
+        /*Before implimenting circular*/
         /*items[rear++] = item;*/
 
         /*The above commented out code becomesM 1%5*/

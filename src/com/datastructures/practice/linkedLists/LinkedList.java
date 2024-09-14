@@ -144,7 +144,6 @@ public class LinkedList {
         while (current != null && (index >= 0 && index < size)) {
             array[index++] = current.value;
             current = current.next;
-
         }
 
         return array;
