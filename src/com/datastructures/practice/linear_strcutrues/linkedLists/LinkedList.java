@@ -1,4 +1,4 @@
-package com.datastructures.practice.linkedLists;
+package com.datastructures.practice.linear_strcutrues.linkedLists;
 
 import java.util.NoSuchElementException;
 

@@ -1,4 +1,4 @@
-package com.datastructures.practice.arrays;
+package com.datastructures.practice.linear_strcutrues.arrays;
 
 import java.util.HashSet;
 

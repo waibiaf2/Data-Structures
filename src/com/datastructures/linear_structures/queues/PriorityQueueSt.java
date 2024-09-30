@@ -1,4 +1,4 @@
-package com.datastructures.queues;
+package com.datastructures.linear_structures.queues;
 
 import java.util.Arrays;
 

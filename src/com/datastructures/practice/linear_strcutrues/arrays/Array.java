@@ -1,4 +1,4 @@
-package com.datastructures.practice.arrays;
+package com.datastructures.practice.linear_strcutrues.arrays;
 
 public class Array {
     int[] items;

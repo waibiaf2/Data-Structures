@@ -1,4 +1,4 @@
-package com.datastructures.linkedlists;
+package com.datastructures.linear_structures.linkedlists;
 
 import java.util.NoSuchElementException;
 
@@ -24,7 +24,6 @@ public class LinkedList {
             node.next = head;
             head = node;
         }
-
         size++;
     }
 
@@ -36,7 +35,6 @@ public class LinkedList {
             tail.next = newNode;
             tail = newNode;
         }
-
         size++;
     }
 
@@ -65,7 +63,7 @@ public class LinkedList {
 
         if (head == tail) {
             head = tail = null;
-        }else{
+        }else {
             var second = head.next;
             head.next = null;
             head = second;
@@ -99,9 +97,6 @@ public class LinkedList {
         return size;
     }
 
-    private boolean isEmpty() {
-        return head == null;
-    }
 
     private Node getPrevious(Node node) {
         //[10->12-15-400-85]
@@ -126,8 +121,8 @@ public class LinkedList {
 
     public void reverse() {
         // [20 -> 30 -> 40 -> 100] -> [100 -> 40 -> 30 -> 20]
-        //  p      c
-        //         n     p
+        //        p      c
+        //               n     p
 
         var previous = head;
         var current = head.next;
@@ -145,13 +140,18 @@ public class LinkedList {
     }
 
     public int getKthFromTheEnd(int k) {
-        // 3rd last element
-        //[23,19,44,60,80,11,45,90]
-        //          a            b
+        // 4rd last element
+        //[23,19,44,60,80,11,45,90] -
+        //              a        b
         var first = head;
         var second = head;
 
-        for (int i = 0; i < k-1; i++)
+        for (int i = 0; i < k-1; i++)// i= 3
+            //0 - 2, k= 3
+            //1
+            //2 - loop exits
+            // second = 44
+
             second = second.next;
 
         while (second != tail) {
@@ -161,4 +161,9 @@ public class LinkedList {
 
         return first.value;
     }
+
+    private boolean isEmpty() {
+        return head == null;
+    }
+
 }
