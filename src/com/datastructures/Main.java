@@ -1,7 +1,7 @@
 package com.datastructures;
 
 
-import com.datastructures.practice.non_linear_structures.trees.Tree;
+import com.datastructures.non_linear_structures.trees.Tree;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,12 +16,18 @@ public class Main {
 
         System.out.println(tree.find(80));
 
-        System.out.println("================Pre Order =================");
+       /* System.out.println("================Pre Order =================");
         tree.preOrderTraversal();
         System.out.println("================= In Oder Traversal =========");
         tree.inOrderTraversal();
         System.out.println("============= Post Order Traversal =========");
-        tree.postOrderTraversal();
+        tree.postOrderTraversal();*/
+
+        System.out.println("===== Height =====");
+        System.out.println(tree.height());
+
+        System.out.println("===== Minimum Value ======");
+        System.out.println(tree.min());
 
         System.out.println("Done");
     }

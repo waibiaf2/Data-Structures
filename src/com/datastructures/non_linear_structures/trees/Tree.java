@@ -69,45 +69,116 @@ public class Tree {
         return false;
     }
 
-    public void  traversePreOrder() {
-        traversePreOrder(root);
+    public void  preOrderTraversal() {
+        preOrderTraversal(root);
     }
 
-    private void traversePreOrder(Node root) {
+    private void preOrderTraversal(Node root) {
         if (root == null) {
             return;
         }
 
         System.out.println(root.value);
-        traversePreOrder(root.leftChild);
-        traversePreOrder(root.rightChild);
+        preOrderTraversal(root.leftChild);
+        preOrderTraversal(root.rightChild);
     }
 
-    public void traverseInOrder() {
-        traverseInOrder(root);
+    public void inOrderTraversal() {
+        inOrderTraversal(root);
     }
 
-    private void traverseInOrder(Node root) {
+    private void inOrderTraversal(Node root) {
         if (root == null) {
             return;
         }
 
-        traverseInOrder(root.leftChild);
+        inOrderTraversal(root.leftChild);
         System.out.println(root.value);
-        traverseInOrder(root.rightChild);
+        inOrderTraversal(root.rightChild);
     }
 
-    public void traversePostOrder() {
-        traversePostOrder(root);
+    public void postOrderTraversal() {
+        postOrderTraversal(root);
     }
 
-    private void traversePostOrder(Node root) {
+    private void postOrderTraversal(Node root) {
         if (root == null) {
             return;
         }
-        traversePostOrder(root.leftChild);
-        traversePostOrder(root.rightChild);
+        postOrderTraversal(root.leftChild);
+        postOrderTraversal(root.rightChild);
         System.out.println(root.value);
+    }
+
+    public int height() {
+        return height(root);
+    }
+    
+    /*
+    * If it's a binary  search tree -> root.left < root && root.right > root
+    * below is the algorithm....
+    * */
+    
+    //O(log n)
+    public int heightBinarySearchTree() {
+        return heightBinarySearchTree(root);
+    }
+    
+    private int heightBinarySearchTree(Node root) {
+        if (root == null)
+            throw new IllegalStateException("Cannot find minimum value of the empty tree");
+        
+        var last = root.value;
+        var  current = root;
+        
+        while (current != null) {
+            last = current.value;
+            current = current.leftChild;
+        }
+        
+        return last;
+    }
+
+    // O(n)
+    private int height(Node root) {
+        if(root == null)
+            return -1;
+
+        if (isLeaf(root)) {
+            return 0;
+        }
+
+        return 1 + Math.max(
+                height(root.leftChild),
+                height(root.rightChild)
+        );
+    }
+
+    public int min() {
+        return min(root);
+    }
+
+    private int min(Node root) {
+        if (isLeaf(root)) {
+            return root.value;
+        }
+
+        var left = min(root.leftChild);
+        var right = min(root.rightChild);
+
+        return Math.min(Math.min(left, right), root.value);
+    }
+
+    /**
+     * Checking Equality algorithm
+     * 1.
+     * */
+    public boolean equals(Tree tree1, Tree tree2) {
+
+    }
+
+    private boolean isLeaf(Node node) {
+        return node.leftChild == null && node.rightChild == null;
     }
 }
 
