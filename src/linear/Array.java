@@ -21,8 +21,7 @@ public class Array {
                 count
             );
 
-            //Add the item to the new array
-            newItems[count] = item;
+            newItems[count++] = item;
 
             //Assign the newItems to items and return
             items = newItems;
