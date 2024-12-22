@@ -1,16 +1,16 @@
 package practice;
 
-public class Array {
+public class ArrayPractice {
     int[] items;
     int count = 0;
 
-    Array(int length) {
+    public ArrayPractice(int length) {
         items = new int[length];
     }
 
     public void insert(int item) {
         if(count == items.length) {
-            int newItems[] = new int[items.length * 2];
+            int[] newItems = new int[items.length * 2];
 
             System.arraycopy(items, 0, newItems, 0, count);
 
@@ -24,12 +24,12 @@ public class Array {
 
     //removeAt
     public void removeAt(int index) {
-        // validate the index
-        if(index < 0 || index > count)
+
+        if (index < 0 || index >= count)
             throw new IllegalArgumentException();
-        
-        for (int i = index; i < count; i++) {
-            items[i] = items[i + 1];            
+
+        for (int i = index; i < items.length; i++) {
+            items[i] = items[i + 1];
         }
 
         count--;

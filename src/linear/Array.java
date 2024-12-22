@@ -41,6 +41,7 @@ public class Array {
          *
          * Decrement the count
          * */
+
         if (index < 0 || index >= count)
             throw new IllegalArgumentException();
 

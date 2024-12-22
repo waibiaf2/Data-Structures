@@ -1,5 +1,7 @@
 package linear;
 
+import java.util.NoSuchElementException;
+
 public class LinkedList {
     private class Node {
         private int value;
@@ -40,7 +42,75 @@ public class LinkedList {
         size++;
     }
 
+    public int indexOf(int item) {
+        int index = 0;
+        var current = first;
+
+        while (current != null) {
+            if (current.value == item)
+                return index;
+
+            current = current.next;
+            index++;
+        }
+
+        return -1;
+    }
+
+    public boolean contains(int item) {
+        return indexOf(item) != -1;
+    }
+
+    public void removeFirst() {
+        if (isEmpty())
+            throw new NoSuchElementException();
+
+        if (first == last)
+            first = last = null;
+        else {
+            var second = first.next;
+            first.next = null;
+            first = second;
+        }
+
+        size--;
+    }
+
+    // 10 -> 20 -> 30 | 30-> last
+    // previousNode -> 20
+    //previousNode.next = null
+    // last = previousNode
+    public void removeLast() {
+        if(isEmpty())
+            throw new NoSuchElementException();
+
+        var previous = getPreviousNode(last);
+
+        if (first == last)
+            first = last = null;
+
+        assert previous != null;
+        previous.next = null;
+        last = previous;
+
+        size--;
+    }
+
+    public int size() {
+        return size;
+    }
+
+
     private boolean isEmpty() {
         return first == null;
+    }
+
+    private Node getPreviousNode(Node node){
+        var current = first;
+        while(current != null){
+            if(current.next == node) return current;
+            current = current.next;
+        }
+        return null;
     }
 }

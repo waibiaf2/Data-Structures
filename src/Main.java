@@ -1,18 +1,32 @@
 import linear.Array;
+import linear.LinkedList;
+import practice.ArrayPractice;
+
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Array array = new Array(3);
+        ArrayPractice arrayPractice = new ArrayPractice(3);
 
-        array.insert(10);
-        array.insert(44);
-        array.insert(95);
-        array.insert(60);
-        array.insert(18);
+        arrayPractice.insert(10);
+        arrayPractice.insert(20);
+        arrayPractice.insert(30);
+        arrayPractice.insert(40);
+        arrayPractice.insert(50);
+        arrayPractice.insert(60);
+
+        arrayPractice.removeAt(2);
+
+        arrayPractice.print();
+
+       /* Array array = new Array(3);
         array.insert(30);
+        array.insert(40);
+        array.insert(50);
+        array.insert(70);
 
-        array.print();
+        array.removeAt(2);
 
-        System.out.println(array.indexOf(95));
+        array.print();*/
     }
 }
