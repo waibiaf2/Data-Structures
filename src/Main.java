@@ -6,27 +6,18 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayPractice arrayPractice = new ArrayPractice(3);
 
-        arrayPractice.insert(10);
-        arrayPractice.insert(20);
-        arrayPractice.insert(30);
-        arrayPractice.insert(40);
-        arrayPractice.insert(50);
-        arrayPractice.insert(60);
+        LinkedList list = new LinkedList();
 
-        arrayPractice.removeAt(2);
+        list.addLast(10);
+        list.addLast(20);
+        list.addLast(30);
+        list.addLast(40);
+        list.addLast(50);
 
-        arrayPractice.print();
+        var myArray = list.toArray();
 
-       /* Array array = new Array(3);
-        array.insert(30);
-        array.insert(40);
-        array.insert(50);
-        array.insert(70);
+        System.out.println(Arrays.toString(myArray));
 
-        array.removeAt(2);
-
-        array.print();*/
     }
 }

@@ -14,5 +14,4 @@ public class LinkedList {
     private Node last;
     private int size;
 
-
 }

@@ -13,3 +13,7 @@
   - At end -> O(n)
   - At beginning -> O(1)
   - In middle -> O(n)
+
+## Types of Linked Lists
+- Singly Linked List -> Node has a pointer to the next node
+- Doubly Linked List -> Node has a pointer to the next and previous node
