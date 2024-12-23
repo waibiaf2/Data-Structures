@@ -14,11 +14,5 @@ public class LinkedList {
     private Node last;
     private int size;
 
-    public void addLast(int item) {
-        // 1. If the first and last are null
-        //    Then assign node to them
-        // 2. 
-    }
-
 
 }
