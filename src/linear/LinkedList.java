@@ -132,14 +132,6 @@ public class LinkedList {
     }*/
 
     public void reverse() {
-        //10->20->30 ||
-        //previous = 10
-        //current = 20
-        //next = 30
-        //current.next = previous|10
-        //previous = current|20
-        //current = next|30
-
         if(isEmpty()) return;
 
         var previous = first;
