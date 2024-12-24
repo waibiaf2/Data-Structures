@@ -113,22 +113,48 @@ public class LinkedList {
         return array;
     }
 
-    public void reverse() {
-        /* *
+ /*   public void reverse() {
+        *//* *
          * [10->20->30] || [10<-20<-30]
          * Get the last -> previous value
          * change the 
-         */
+         *//*
 
          var current = first;
-         var next = current.next;
          var temp = next.next;
 
          while(current != null) {
-            next.next = current;
-            current.next = null;
-            current = temp;
+            var next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
          }
+    }*/
+
+    public void reverse() {
+        //10->20->30 ||
+        //previous = 10
+        //current = 20
+        //next = 30
+        //current.next = previous|10
+        //previous = current|20
+        //current = next|30
+
+        if(isEmpty()) return;
+
+        var previous = first;
+        var current = first.next;
+
+        while(current != null){
+            var next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+
+        last = first;
+        last.next = null;
+        first = previous;
     }
 
     private boolean isEmpty() {

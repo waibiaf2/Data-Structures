@@ -1,6 +1,4 @@
-import linear.Array;
 import linear.LinkedList;
-import practice.ArrayPractice;
 
 import java.util.Arrays;
 
@@ -15,9 +13,8 @@ public class Main {
         list.addLast(40);
         list.addLast(50);
 
-        var myArray = list.toArray();
-
-        System.out.println(Arrays.toString(myArray));
-
+        System.out.println(Arrays.toString(list.toArray()));
+        list.reverse();
+        System.out.println(Arrays.toString(list.toArray()));
     }
 }
