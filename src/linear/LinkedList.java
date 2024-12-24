@@ -114,7 +114,21 @@ public class LinkedList {
     }
 
     public void reverse() {
+        /* *
+         * [10->20->30] || [10<-20<-30]
+         * Get the last -> previous value
+         * change the 
+         */
 
+         var current = first;
+         var next = current.next;
+         var temp = next.next;
+
+         while(current != null) {
+            next.next = current;
+            current.next = null;
+            current = temp;
+         }
     }
 
     private boolean isEmpty() {
