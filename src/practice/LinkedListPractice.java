@@ -86,6 +86,23 @@ public class LinkedListPractice {
 
     }
 
+    public int[] toArray() {
+        int[] array = new int[size];
+        var current = first;
+        int index = 0;
+
+        while(current != null) {
+            array[index++] = current.value;
+            current = current.next;
+        }
+
+        return array;
+    }
+
+    public int size() {
+        return size;
+    }
+
     public void reverse() {
         var previous = first;
         var current = first.next;
@@ -96,6 +113,10 @@ public class LinkedListPractice {
             previous = current;
             current = next;
         }
+
+        last = first;
+        last.next = null;
+        first= previous;
     }
 
     private Node getPrevious(Node node) {       
