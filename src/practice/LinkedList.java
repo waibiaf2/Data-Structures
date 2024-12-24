@@ -54,7 +54,28 @@ public class LinkedList {
         return indexOf(item) != -1;
     }
 
-    
+    public void removeFirst() {
+        if(first == last) 
+            first = last = null;
+        
+        var current = first;
+        var next = current.next;
+        current.next = null;
+        first = next;
+    }
+
+
+
+    private Node getPrevious(Node node) {       
+        var current = first;
+        while(current != null) {
+            if(current.next == node)
+                return current;
+            current = current.next;
+        }
+
+        return null;
+    }
 
     private boolean isEmpty() {
         return first == null;
