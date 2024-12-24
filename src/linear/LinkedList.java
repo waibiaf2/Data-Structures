@@ -3,8 +3,8 @@ package linear;
 import java.util.NoSuchElementException;
 
 public class LinkedList {
-    private class Node {
-        private int value;
+    private static class Node {
+        private final int value;
         private Node next;
 
         public Node(int value) {
@@ -113,24 +113,6 @@ public class LinkedList {
         return array;
     }
 
- /*   public void reverse() {
-        *//* *
-         * [10->20->30] || [10<-20<-30]
-         * Get the last -> previous value
-         * change the 
-         *//*
-
-         var current = first;
-         var temp = next.next;
-
-         while(current != null) {
-            var next = current.next;
-            current.next = previous;
-            previous = current;
-            current = next;
-         }
-    }*/
-
     public void reverse() {
         if(isEmpty()) return;
 
@@ -147,6 +129,35 @@ public class LinkedList {
         last = first;
         last.next = null;
         first = previous;
+    }
+
+    public int getKthFromTheEnd(int k) {
+        if(isEmpty())
+            throw new IllegalStateException();
+
+        /**
+         * Create two pointers*/
+        var a = first;
+        var b = first;
+
+        /**
+         * Moving the second pointer b k-1 steps*/
+        for (int i = 0; i < k - 1; i++) {
+            b = b.next;
+            if(b == null)
+                throw new IllegalArgumentException();
+        }
+
+        /**
+         * Moving both pointers until b reaches the last node*/
+        while(b != last){
+            a = a.next;
+            b = b.next;
+        }
+
+        /*
+        * return value*/
+        return a.value;
     }
 
     private boolean isEmpty() {
