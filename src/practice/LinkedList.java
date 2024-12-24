@@ -25,8 +25,18 @@ public class LinkedList {
         size++;
     }
 
-    
+    public void addFirst(int item) {
+        Node node = new Node(item);
 
+        if (isEmpty())
+            first = last = node;
+        
+        node.next = first;
+        first = node;
+        size++;
+    }
+
+    
     private boolean isEmpty() {
         return first == null;
     }
