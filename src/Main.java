@@ -1,20 +1,24 @@
 import linear.LinkedList;
+import linear.QueueWithTwoStackMe;
+import linear.QueueWithTwoStacksMosh;
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 public class Main {
+
     public static void main(String[] args) {
+        LinkedList myList = new LinkedList();
 
-        LinkedList list = new LinkedList();
+        myList.addLast(10);
+        myList.addLast(20);
+        myList.addLast(30);
+        myList.addLast(40);
 
-        list.addLast(10);
-        list.addLast(20);
-        list.addLast(30);
-        list.addLast(40);
-        list.addLast(50);
+        myList.addFirst(900);
 
-        System.out.println(Arrays.toString(list.toArray()));
-        list.reverse();
-        System.out.println(Arrays.toString(list.toArray()));
+        var listArray = myList.toArray();
+        System.out.println(Arrays.toString(listArray));
+
     }
 }
