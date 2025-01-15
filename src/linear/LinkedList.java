@@ -29,6 +29,17 @@ public class LinkedList {
         size++;
     }
 
+    public void addLast2(int item) {
+        var node = new Node(item);
+
+        if (isEmpty()) {
+            first = last = node;
+        } else {
+            last.next = node;
+            last = node;
+        }
+    }
+
     public void addFirst(int item) {
         var node = new Node(item);
 
@@ -113,7 +124,7 @@ public class LinkedList {
         return array;
     }
 
-    public void reverse() {
+    public void reverseInPlace() {
         if(isEmpty()) return;
 
         var previous = first;
@@ -141,7 +152,7 @@ public class LinkedList {
         var b = first;
 
         /**
-         * Moving the second pointer b k-1 steps*/
+         * Moving the second pointer b k-1 steps ahead*/
         for (int i = 0; i < k - 1; i++) {
             b = b.next;
             if(b == null)
