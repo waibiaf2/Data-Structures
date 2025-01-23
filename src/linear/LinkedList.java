@@ -29,17 +29,6 @@ public class LinkedList {
         size++;
     }
 
-    public void addLast2(int item) {
-        var node = new Node(item);
-
-        if (isEmpty()) {
-            first = last = node;
-        } else {
-            last.next = node;
-            last = node;
-        }
-    }
-
     public void addFirst(int item) {
         var node = new Node(item);
 
