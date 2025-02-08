@@ -1,4 +1,4 @@
-package linear;
+package linear.stack;
 
 import java.util.Arrays;
 

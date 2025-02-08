@@ -1,5 +1,6 @@
-package linear;
+package linear.queue;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 public class QueueWithTwoStacksMosh {
@@ -37,5 +38,9 @@ public class QueueWithTwoStacksMosh {
             while (!stack1.isEmpty()) {
                 stack2.push(stack1.pop());
             }
+    }
+
+    public void printStack() {
+        System.out.println(Arrays.toString(stack1.toArray()));
     }
 }

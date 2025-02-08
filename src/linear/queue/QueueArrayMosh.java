@@ -1,4 +1,4 @@
-package linear;
+package linear.queue;
 
 import java.util.Arrays;
 
@@ -23,17 +23,17 @@ public class QueueArrayMosh {
         /** Implementing circular arrays
          * if our length is 5
          * [0,0,30,40,50]
-         *            R
-         *            4
+         *
+         * the last index -> 4
          * To add another element
-         * Left     Right
-         * 5  -> 0  Right = length % left
-         * 6 -> 1
-         * 7 -> 2
-         * 8 -> 3
-         * 9 -> 4
-         * 10 -> 0
-         * 11 -> 1
+         * Left(L)     Right(R)
+         * 5   ->    0     Right = length % left
+         * 6   ->    1
+         * 7   ->    2
+         * 8   ->    3
+         * 9   ->    4
+         * 10  ->    0
+         * 11  ->    1
          * but left = (R,4) + 1
          * rear, R = (Left % length)
          *       R = (R+1) % length

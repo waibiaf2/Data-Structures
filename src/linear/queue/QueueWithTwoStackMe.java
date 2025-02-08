@@ -1,4 +1,4 @@
-package linear;
+package linear.queue;
 
 import java.util.Arrays;
 import java.util.Stack;

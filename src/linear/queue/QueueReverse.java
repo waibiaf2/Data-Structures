@@ -1,4 +1,4 @@
-package linear;
+package linear.queue;
 
 import java.util.ArrayDeque;
 import java.util.Stack;
@@ -27,12 +27,12 @@ public class QueueReverse {
         }
 
         return queueItems;
-
     }
 
     public static Queue<Integer> reverse2(Queue<Integer> queue) {
-        // Q [30,20,10,]
-        // S [  ]
+        // Q [30,20,10,] -> [20,10] -> [10]    -> []
+        // S [ ]         -> [30]    -> [30,20] -> [30,20,10]
+        //
         Stack<Integer> stack = new Stack<>();
         while (!queue.isEmpty())
             stack.push(queue.remove());

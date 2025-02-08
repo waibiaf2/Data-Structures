@@ -1,24 +1,18 @@
-import linear.LinkedList;
-import linear.QueueWithTwoStackMe;
-import linear.QueueWithTwoStacksMosh;
-
-import java.util.Arrays;
-import java.util.PriorityQueue;
+import linear.hasmap_hashset.HashTable;
 
 public class Main {
-
     public static void main(String[] args) {
-        LinkedList myList = new LinkedList();
+        HashTable table = new HashTable();
 
-        myList.addLast(10);
-        myList.addLast(20);
-        myList.addLast(30);
-        myList.addLast(40);
+        table.put(6, "Waibi Andrew");
+        table.put(8, "Colline Kisubi");
+        table.put(11, "Daphine Namirembe");
+        table.put(6, "Waibi Andrew Franklin");
 
-        myList.addFirst(900);
-
-        var listArray = myList.toArray();
-        System.out.println(Arrays.toString(listArray));
+        table.remove(6);
+        table.remove(6);
+        System.out.println("Done");
 
     }
+
 }
