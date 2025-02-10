@@ -43,39 +43,43 @@ public class HashTable {
     }
 
     public String get(int key) {
-        var index = hash(key);
-        var bucket = entries[index];
+        var entry = getEntry(key);
 
-        if (bucket != null) {
-            for (var entry : bucket)
-                if (entry.key == key)
-                    return entry.value;
-        }
-
+        /*if(entry != null && entry.key == key)
+            return entry.value;
         return null;
+        */
+        return (entry != null) ? entry.value : null;
     }
 
     //remove
     public void remove(int key) {
-        var index = hash(key);
-        var bucket = entries[index];
+        var entry = getEntry(key);
+        if (entry == null)
+            throw new IllegalStateException("Entry does not exist...");
 
-        if(bucket == null)
-            throw new IllegalStateException("Bucket is does not exist");
-
-        for (var entry : bucket) {
-            if (entry.key == key) {
-                bucket.remove(entry);
-                return;
-            }
-        }
-
-        throw new IllegalStateException("Entry does not exist in the bucket");
+        getBucket(key).remove(entry);        var bucket = getBucket(key);
     }
 
     //hash function
-    public int hash(int key) {
+    private int hash(int key) {
         return key % entries.length;
+    }
+
+    private Entry getEntry(int key) {
+        var bucket = getBucket(key);
+        if(bucket != null) {
+            for (var entry : bucket) {
+                if (entry.key == key) {
+                    return entry;
+                }
+            }
+        }
+        return null;
+    }
+
+    private LinkedList<Entry> getBucket(int key) {
+        return entries[hash(key)];
     }
 
     private class Entry {
