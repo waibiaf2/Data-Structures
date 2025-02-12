@@ -9,8 +9,8 @@ public class Main {
         table.put(11, "Daphine Namirembe");
         table.put(6, "Waibi Andrew Franklin");
 
-        table.remove(6);
-        table.remove(6);
+        //table.remove(6);
+
         System.out.println("Done");
 
     }
