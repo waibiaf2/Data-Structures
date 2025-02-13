@@ -1,6 +1,8 @@
 import linear.hasmap_hashset.HashTable;
 import non_linear.binary_trees.Tree;
 
+import javax.crypto.spec.PSource;
+
 public class Main {
     public static void main(String[] args) {
         Tree tree = new Tree();
@@ -16,6 +18,16 @@ public class Main {
 
         System.out.println("Done");
 
+        System.out.println("============= Pre Order ================");
+        tree.traversePreOrder();
+        System.out.println("============= In Order ================");
+        tree.traverseInOrder();
+        System.out.println("============= Post Order ================");
+        tree.traversePostOrder();
+
+        System.out.println("done");
+
     }
+
 
 }
